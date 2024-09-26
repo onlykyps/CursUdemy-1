@@ -1,1 +1,1 @@
-"# CursUdemy-1 Try Django 19"
+"# CursUdemy-1 Try Django 1.9 but actually Django 5.1"
