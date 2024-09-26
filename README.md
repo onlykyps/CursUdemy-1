@@ -1,1 +1,1 @@
-"# CursUdemy-1" 
+"# CursUdemy-1 Try Django 19"
