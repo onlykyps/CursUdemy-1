@@ -17,7 +17,7 @@ urlpatterns = [
     # path('posts/', views.post_home),
     path('posts/', post_home),
     path('create/', post_create),
-    path('detail/', post_detail),
+    path('/(P<id>\d+)/', post_detail),
     path('',post_list),
     path('updat/', post_update),
     path('delete/', post_delete),
