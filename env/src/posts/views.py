@@ -9,13 +9,12 @@ def post_home(request):
 def post_create(request):
 	return HttpResponse("<h1>Hello</h1>")
 
-
 def post_detail(request):
 	return HttpResponse("<h1>Hello</h1>")
 
-
 def post_list(request):
-	return HttpResponse("<h1>Hello</h1>")
+	return render(request, "index.html", {})
+	# return HttpResponse("<h1>Hello</h1>")
 
 def post_update(request):
 	return HttpResponse("<h1>Hello</h1>")
