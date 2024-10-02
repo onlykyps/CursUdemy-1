@@ -8,11 +8,15 @@
 <body>
 	<h1>{{context_data}} is working</h1>
 	{% for obj in  object_list %}
-		{{object.title}} <br/>
-		{{object.content}} <br/>
-		{{object.timestamp}} <br/>
-		{{object.updated}} <br/>
-		{{object.id}} <br/>
+		
+		{% url "posts:detail" id = obj.id %}
+		
+		<a href='{{ obj.get_absolute_url }}'>{{obj.title}} <br/></a>
+		
+		{{obj.content}} <br/>
+		{{obj.timestamp}} <br/>
+		{{obj.updated}} <br/>
+		{{obj.id}} <br/>
 	{% endfor %"}
 </body>
 </html>
