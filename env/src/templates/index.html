@@ -7,5 +7,12 @@
 </head>
 <body>
 	<h1>{{context_data}} is working</h1>
+	{% for obj in  object_list %}
+		{{object.title}} <br/>
+		{{object.content}} <br/>
+		{{object.timestamp}} <br/>
+		{{object.updated}} <br/>
+		{{object.id}} <br/>
+	{% endfor %"}
 </body>
 </html>
