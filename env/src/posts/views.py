@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, redirect
 from .models import Post
 from .forms import PostForm
 from django.contrib import messages
@@ -76,7 +76,7 @@ def post_update(request, id=None, instance=instance):
 	if form.is_valid():
 		instance = form.save(commit=False)
 		instance.save()
-		messages.success(request, "Item saved", extra_tags='html_safe')
+		messages.success(request, "<a href='#'> Item </a> saved", extra_tags='html_safe')
 		return HttpResponseRedirect(instance.get_absolute_url())
 	else:
 		messages.error(request, "Not item saved")
@@ -91,5 +91,10 @@ def post_update(request, id=None, instance=instance):
 
 	# return HttpResponse("<h1>Hello</h1>")
 
-def post_delete(request):
-	return HttpResponse("<h1>Hello</h1>")
+def post_delete(request, id=None):
+
+	instance = get_object_or_404(Post, id=id)
+	instance.delete()
+	messages.success(request, "Successfully deleted")
+
+	return redirect("post:list")
