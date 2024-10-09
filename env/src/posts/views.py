@@ -64,7 +64,7 @@ def post_list(request):
 	"object_list": queryset,
 	"title":"list"
 	}	
-	return render(request, "index.html", context_data)
+	return render(request, "post_list.html", context_data)
 	# return HttpResponse("<h1>Hello</h1>")
 
 def post_update(request, id=None, instance=instance):
@@ -97,4 +97,4 @@ def post_delete(request, id=None):
 	instance.delete()
 	messages.success(request, "Successfully deleted")
 
-	return redirect("post:list")
+	return redirect("posts:list")

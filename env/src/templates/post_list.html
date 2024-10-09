@@ -1,22 +1,22 @@
-<<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
 	<h1>{{context_data}} is working</h1>
+	
+	<!-- <p>Parent page</p> -->
+
 	{% for obj in  object_list %}
-		
+
 		{% url "posts:detail" id = obj.id %}
-		
+	
 		<a href='{{ obj.get_absolute_url }}'>{{obj.title}} <br/></a>
-		
+	
 		{{obj.content}} <br/>
 		{{obj.timestamp}} <br/>
 		{{obj.updated}} <br/>
 		{{obj.id}} <br/>
+	
 	{% endfor %"}
-</body>
-</html>
+
+{% endblock content %}
