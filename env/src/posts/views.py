@@ -17,9 +17,7 @@ def post_create(request):
 		instance.save()
 		messages.success(request, "Successfully created")
 		return HttpResponseRedirect(instance.get_absolute_url())
-	else:
-		messages.error(request, "Not successfully created")
-
+	
 	# if request.method == "POST":
 	# 	print request.POST
 	
